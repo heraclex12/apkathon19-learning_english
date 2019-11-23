@@ -1,6 +1,6 @@
 from django.urls import path
 
-from skills.views import writing, index
+from skills.views import writing, index, check_grammar
 
 urlpatterns = [
     path('writing/', writing),

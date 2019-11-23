@@ -116,12 +116,13 @@
                 <span><b class="text-dark">{{ topic.thread }}</b></span>
 
             </div>
-            <form style="width:100%">
+            
+            <form style="width:100%" action="" method="post">
+                {% csrf_token %}
                 <h5>BÀI LÀM</h5>
                 <div class="form-group">
-
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    <button type="submit" class="btn btn-primary mt-2">Nộp bài</button>
+                    {{ form }}
+                    <input type="submit" class="btn btn-primary mt-2" value="Nộp bài">
                 </div>
             </form>
             <div class="form-check">
