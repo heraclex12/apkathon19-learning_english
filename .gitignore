@@ -1,8 +1,9 @@
-djangotut/
+venv/
 .idea/
 target/
 data/
 tmp/
 bin/
+.git/
 logs/
 .DS_STore

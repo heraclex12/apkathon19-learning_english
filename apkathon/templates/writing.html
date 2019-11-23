@@ -1,0 +1,352 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Edumark</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static  "img/favicon.png" %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/themify-icons.css" %}">
+    <link rel="stylesheet" href="{% static "css/nice-select.css" %}">
+    <link rel="stylesheet" href="{% static "css/flaticon.css" %}">
+    <link rel="stylesheet" href="{% static "css/gijgo.css" %}">
+    <link rel="stylesheet" href="{% static "css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "css/slicknav.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <!-- <link rel="stylesheet" href="{% static css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo-img">
+                                <a href="index.html">
+                                    <img src="{% static "img/logo.png" %}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-7">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a  href="index.html">home</a></li>
+                                        <li><a class="active" href="#">skills <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="course_details.html">Listening</a></li>
+                                                <li><a href="writing.html">Writing</a></li>
+                                                <li><a href="course_details.html">Reading</a></li>
+                                                <li><a href="elements.html">Speaking</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Mock test <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="course_details.html">Beginner</a></li>
+                                                <li><a href="elements.html">Intermediate</a></li>
+                                                <li><a href="course_details.html">Advance</a></li>
+                                                <li><a href="elements.html">Test your level</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="log_chat_area d-flex align-items-center">
+                                <div class="live_chat_btn">
+                                    <a class="boxed_btn_orange" href="#">
+                                        <i class="flaticon-user"></i>
+                                        <span>LOGIN</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- bradcam_area_start -->
+        <div class="bradcam_area breadcam_bg overlay2">
+            <h3>Writing</h3>
+        </div>
+        <!-- bradcam_area_end -->
+
+    <!-- about_area_start -->
+
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-12">
+                <h5>06.07.2019</h5>
+            </div>
+            <div class="col-12 mb-4">
+                <h5>Dạng bài BAR CHART</h5>
+            </div>
+
+            <h5 class="text-uppercase ml-3">Đề bài</h5>
+
+            <div class="col-12 ">
+                <span><b class="text-dark">{{ topic.thread }}</b></span>
+
+            </div>
+            <form style="width:100%">
+                <h5>BÀI LÀM</h5>
+                <div class="form-group">
+
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <button type="submit" class="btn btn-primary mt-2">Nộp bài</button>
+                </div>
+            </form>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="change-pass" onclick="abcf()">
+                <label class="form-check-label" for="exampleCheck1"><b class="text-dark">XEM LỜI GIẢI</b></label>
+            </div>
+           <div class="col-12">
+            <div id="test" style="display:none">
+
+                <span class="text-danger ml-2 font-weight-bold"> Report Plan:</span>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Paraphrase paragraph:</b> graphs>bar charts; show>illustrate; percentage>proportion; participated>took part in</li>
+                    <li class="list-group-item"><b>Overview/summary paragraph:</b> (1) a higher % of boys participated in sport (2) dancing was more popular among girls</li>
+                    <li class="list-group-item"><b>Paragraph 3:</b> cultural activities – compare figures for drama and singing; contrast % for dancing and playing musical instruments</li>
+                    <li class="list-group-item"><b>Paragraph 4:</b> sport – contrast figures for boys and girls</li>
+                   
+                  </ul>
+                  <span class="text-danger ml-2 font-weight-bold"> Report:</span>
+                  <p>&nbsp  &nbsp  &nbspThe bar charts illustrate the proportion of Australian boys and girls between the ages of 5 and 14 who took part in drama, dancing, singing, playing musical instruments and sport in 2003. <br> &nbsp  &nbsp  &nbsp In terms of organised cultural activities, the figures for boys and girls who took part in drama and singing were almost the same, at approximately 5% for each of these activities.   However, while almost one-quarter of girls participated in dancing, the figure for boys was only 3%.  By contrast, 15% of boys played musical instruments compared with 10% of <br>&nbsp  &nbsp  &nbspThere was a significant difference in the proportion of boys and girls who participated in sport.  Although just over half of all girls played sport, the figure for boys was considerably higher at 70%.</p>
+                  
+            </div>
+           </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer footer_bg_1">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                            <p>
+                                Firmament morning sixth subdue darkness creeping gathered divide our let god moving.
+                                Moving in fourth air night bring upon it beast let you dominion likeness open place day
+                                great.
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Courses
+                            </h3>
+                            <ul>
+                                <li><a href="#">Wordpress</a></li>
+                                <li><a href="#"> Photoshop</a></li>
+                                <li><a href="#">Illustrator</a></li>
+                                <li><a href="#">Adobe XD</a></li>
+                                <li><a href="#">UI/UX</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Resourches
+                            </h3>
+                            <ul>
+                                <li><a href="#">Free Adobe XD</a></li>
+                                <li><a href="#">Tutorials</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#"> About</a></li>
+                                <li><a href="#"> Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Address
+                            </h3>
+                            <p>
+                                200, D-block, Green lane USA <br>
+                                +10 367 467 8934 <br>
+                                edumark@contact.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer -->
+
+
+    <!-- form itself end-->
+    <form id="test-form" class="white-popup-block mfp-hide">
+        <div class="popup_box ">
+            <div class="popup_inner">
+                <div class="logo text-center">
+                    <a href="#">
+                        <img src="{% static "img/form-logo.png" %}" alt="">
+                    </a>
+                </div>
+                <h3>Sign in</h3>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12">
+                            <input type="email" placeholder="Enter email">
+                        </div>
+                        <div class="col-xl-12 col-md-12">
+                            <input type="password" placeholder="Password">
+                        </div>
+                        <div class="col-xl-12">
+                            <button type="submit" class="boxed_btn_orange">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+                <p class="doen_have_acc">Don’t have an account? <a class="dont-hav-acc" href="#test-form2">Sign Up</a>
+                </p>
+            </div>
+        </div>
+    </form>
+    <!-- form itself end -->
+
+    <!-- form itself end-->
+    <form id="test-form2" class="white-popup-block mfp-hide">
+        <div class="popup_box ">
+            <div class="popup_inner">
+                <div class="logo text-center">
+                    <a href="#">
+                        <img src="{% static "img/form-logo.png" %}" alt="">
+                    </a>
+                </div>
+                <h3>Resistration</h3>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12">
+                            <input type="email" placeholder="Enter email">
+                        </div>
+                        <div class="col-xl-12 col-md-12">
+                            <input type="password" placeholder="Password">
+                        </div>
+                        <div class="col-xl-12 col-md-12">
+                            <input type="Password" placeholder="Confirm password">
+                        </div>
+                        <div class="col-xl-12">
+                            <button type="submit" class="boxed_btn_orange">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </form>
+    <!-- form itself end -->
+
+
+    <!-- JS here -->
+    <script src="{% static "js/vendor/modernizr-3.5.0.min.js" %}"></script>
+    <script src="{% static "js/vendor/jquery-1.12.4.min.js" %}"></script>
+    <script src="{% static "js/popper.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/owl.carousel.min.js" %}"></script>
+    <script src="{% static "js/isotope.pkgd.min.js" %}"></script>
+    <script src="{% static "js/ajax-form.js" %}"></script>
+    <script src="{% static "js/waypoints.min.js" %}"></script>
+    <script src="{% static "js/jquery.counterup.min.js" %}"></script>
+    <script src="{% static "js/imagesloaded.pkgd.min.js" %}"></script>
+    <script src="{% static "js/scrollIt.js" %}"></script>
+    <script src="{% static "js/jquery.scrollUp.min.js" %}"></script>
+    <script src="{% static "js/wow.min.js" %}"></script>
+    <script src="{% static "js/nice-select.min.js" %}"></script>
+    <script src="{% static "js/jquery.slicknav.min.js" %}"></script>
+    <script src="{% static "js/jquery.magnific-popup.min.js" %}"></script>
+    <script src="{% static "js/plugins.js" %}"></script>
+    <script src="{% static "js/gijgo.min.js" %}"></script>
+
+    <!--contact js-->
+    <script src="{% static "js/contact.js" %}"></script>
+    <script src="{% static "js/jquery.ajaxchimp.min.js" %}"></script>
+    <script src="{% static "js/jquery.form.js" %}"></script>
+    <script src="{% static "js/jquery.validate.min.js" %}"></script>
+    <script src="{% static "js/mail-script.js" %}"></script>
+    <script src="{% static "js/writing.js" %}"></script>
+    
+    <script src="{% static "js/main.js" %}"></script>
+</body>
+
+</html>
