@@ -7,7 +7,8 @@
     <title>English for Future</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% load static %}
+
+     {% load static %}
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static  "img/favicon.png" %}">
     <!-- Place favicon.ico in the root directory -->
@@ -24,7 +25,8 @@
     <link rel="stylesheet" href="{% static "css/animate.css" %}">
     <link rel="stylesheet" href="{% static "css/slicknav.css" %}">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <!-- <link rel="stylesheet" href="{% static css/responsive.css"> -->
+    <link rel="stylesheet" href="{% static "css/circle.css" %}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
 <body>
@@ -49,7 +51,7 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a  href="/">home</a></li>
+                                        <li><a href="/">home</a></li>
                                         <li><a class="active" href="#">skills <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="/listening">Listening</a></li>
@@ -92,61 +94,107 @@
     <!-- header-end -->
 
     <!-- bradcam_area_start -->
-        <div class="bradcam_area breadcam_bg overlay2">
-            <h3>Writing</h3>
-        </div>
-        <!-- bradcam_area_end -->
+    <div class="bradcam_area breadcam_bg overlay2">
+        <h3>Writing</h3>
+    </div>
+    <!-- bradcam_area_end -->
 
     <!-- about_area_start -->
 
 
     <div class="container">
-        <div class="row mt-4">
-            <div class="col-12">
-                <h5>06.07.2019</h5>
-            </div>
-            <div class="col-12 mb-4">
-                <h5>Dạng bài {{ topic.type }}</h5>
-            </div>
-
-            <h5 class="text-uppercase ml-3">Đề bài</h5>
-
-            <div class="col-12 pt-3">
-                <span style="font-size:23px;"><b class="text-dark">{{ topic.thread }}</b></span>
-
-            </div>
+        <div class="row d-flex justify-content-center mt-2">
+           <h3> Kết quả bài viết</h3>
+        </div>
+           <div class="row d-flex justify-content-center mt-2">
             
-            <form style="width:100%" action="" method="post" class="mt-5 ">
-                {% csrf_token %}
-                <h5 class="ml-3">BÀI LÀM</h5>
-                <div class="form-group">
-                    {{ form }}
-                    <div class="row d-flex justify-content-center">
-                    <input type="submit" class="genric-btn success-border circle mt-2" value="Nộp bài">
+                        <div class="d-flex flex-column text-center">
+                                <div class="c100 p{{ point.grammar }} orange mt-5 ">
+                                        <span style="font-family: 'Titillium Web', sans-serif;color:#3c4761">{{ point.grammar }}%</span>
+                                        <div class="slice">
+                                            <div class="bar"></div>
+                                            <div class="fill"></div>
+                                        </div>
+                                    </div>
+                                    <span class="font-weight-bold">Grammar</span>
+                        </div>
+               
+              
+                        <div class="d-flex flex-column text-center">
+                                <div class="c100 p{{ point.total }} big ml-2 ">
+                                        <span style="font-family: 'Titillium Web', sans-serif;color:#3c4761">{{ point.total }}%</span>
+                                        <div class="slice">
+                                            <div class="bar"></div>
+                                            <div class="fill"></div>
+                                        </div>
+                                    </div>
+                                    <span class="font-weight-bold">Total</span>
+                            </div>
+                       
+                            <div class="d-flex flex-column text-center">
+                                    <div class="c100 p{{ point.spelling }} green mt-5">
+                                            <span style="font-family: 'Titillium Web', sans-serif;color:#3c4761">{{ point.spelling }}%</span>
+                                            <div class="slice">
+                                                <div class="bar"></div>
+                                                <div class="fill"></div>
+                                            </div>
+                                        </div>
+                                        <span class="font-weight-bold">Spelling</span>
+                            </div>
+           </div>
+        <div class="row mt-4">
+
+            <div class="container">
+                <div class="row">
+                    <h4>Những lỗi sai</h4>
+                </div>
+                <div class="row">
+                    <div class="col-12 pb-5 border-bottom border-warning">
+                    <p style="font-size:30px;text-align:center;color:black">{% autoescape on %} {{ fixed|safe }} {% endautoescape %}</p>
                     </div>
                 </div>
-            </form>
-            <button id="answer" onclick="show()" type="button" class="genric-btn danger-border mb-2">Xem lời
-                giải</button>
-
-           <div class="col-12">
+                <div class="row pt-5"></div>
+            </div>
+            <script>
+                var bool = 1;
+                function show() {
+                    var disp = document.getElementById("test");
+                    var disp2 = document.getElementById("answer");
+                    if (bool == 1) {
+                        disp.style.display = "block";
+                        bool = 0;
+                        disp2.innerHTML = 'Ẩn lời giải';
+                    }
+                    else {
+                        disp.style.display = "none";
+                        disp2.innerHTML = 'Xem lời giải';
+                        bool = 1;
+                    }
+                }
+            </script>
+            <button style="width: 100%;" id="answer" onclick="show()" type="button"
+                class="genric-btn danger-border mb-2">Xem lỗi sai</button>
+            
+            <div class="col-12">
             <div id="test" style="display:none">
-
-                <span class="text-danger ml-2 font-weight-bold"> Essay Plan:</span>
                 <ul class="list-group list-group-flush">
-                    {% for key, values in topic.items %}
-                        {% if key == "essay_plan" %}
-                            {% for k, v in values.items %}
-                    <li class="list-group-item"><b>{{ k }}:</b> {{ v }}</li>
-                            {% endfor %}
+                    {% for error in errors %}
+                        <li class="list-group-item"><b>Lỗi: </b> {{ error.msg }}</li>
+                        {% if error.dst != "" %}
+                            <li class="list-group-item"><b>Miêu tả: </b> {{ error.dst }}</li>
                         {% endif %}
+                        {% for k, v in error.items %}
+                            {% if k == "rep" %}
+                                {% for key, value in v.items %}
+                                <li class="list-group-item"><b>Thay thế: </b> {{ value }}</li>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
                     {% endfor %}
                   </ul>
-                  <span class="text-danger ml-2 font-weight-bold"> Essay:</span>
-                  <p>{{ topic.essay }} </p>
-                  
             </div>
            </div>
+            
         </div>
     </div>
 
@@ -326,8 +374,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{% static "js/jquery.validate.min.js" %}"></script>
     <script src="{% static "js/mail-script.js" %}"></script>
     <script src="{% static "js/writing.js" %}"></script>
-    
+
     <script src="{% static "js/main.js" %}"></script>
+    <script src="{% static "sweetalert2.all.min.js" %}"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="{% static "jQuery-plugin-progressbar.js" %}"></script>
+
+
 </body>
 
 </html>

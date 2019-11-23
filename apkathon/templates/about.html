@@ -7,7 +7,8 @@
     <title>English for Future</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% load static %}
+
+  {% load static %}
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static  "img/favicon.png" %}">
     <!-- Place favicon.ico in the root directory -->
@@ -24,7 +25,8 @@
     <link rel="stylesheet" href="{% static "css/animate.css" %}">
     <link rel="stylesheet" href="{% static "css/slicknav.css" %}">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <!-- <link rel="stylesheet" href="{% static css/responsive.css"> -->
+    <link rel="stylesheet" href="{% static "css/circle.css" %}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
 <body>
@@ -33,7 +35,7 @@
         <![endif]-->
 
     <!-- header-start -->
-    <header>
+   <header>
         <div class="header-area ">
             <div id="sticky-header" class="main-header-area">
                 <div class="container-fluid p-0">
@@ -49,8 +51,8 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a  href="/">home</a></li>
-                                        <li><a class="active" href="#">skills <i class="ti-angle-down"></i></a>
+                                        <li><a href="/">home</a></li>
+                                        <li><a href="#">skills <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="/listening">Listening</a></li>
                                                 <li><a href="/writing">Writing</a></li>
@@ -66,17 +68,17 @@
                                                 <li><a href="elements.html">Test your level</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="/about">About</a></li>
+                                        <li><a class="active" href="/about">About</a></li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="log_chat_area d-flex align-items-center">
-                                <div class="live_chat_btn">
-                                    <a class="boxed_btn_orange" href="#">
+                                <div class="live_chat_btn" >
+                                    <a class="boxed_btn_orange" onclick="Login()">
                                         <i class="flaticon-user"></i>
-                                        <span>LOGIN</span>
+                                        <span>LOGIN WITH FACEBOOK</span>
                                     </a>
                                 </div>
                             </div>
@@ -91,66 +93,136 @@
     </header>
     <!-- header-end -->
 
-    <!-- bradcam_area_start -->
+        <!-- bradcam_area_start -->
         <div class="bradcam_area breadcam_bg overlay2">
-            <h3>Writing</h3>
+            <h3>About Us</h3>
         </div>
         <!-- bradcam_area_end -->
 
     <!-- about_area_start -->
-
-
-    <div class="container">
-        <div class="row mt-4">
-            <div class="col-12">
-                <h5>06.07.2019</h5>
-            </div>
-            <div class="col-12 mb-4">
-                <h5>Dạng bài {{ topic.type }}</h5>
-            </div>
-
-            <h5 class="text-uppercase ml-3">Đề bài</h5>
-
-            <div class="col-12 pt-3">
-                <span style="font-size:23px;"><b class="text-dark">{{ topic.thread }}</b></span>
-
-            </div>
-            
-            <form style="width:100%" action="" method="post" class="mt-5 ">
-                {% csrf_token %}
-                <h5 class="ml-3">BÀI LÀM</h5>
-                <div class="form-group">
-                    {{ form }}
-                    <div class="row d-flex justify-content-center">
-                    <input type="submit" class="genric-btn success-border circle mt-2" value="Nộp bài">
+    <div class="about_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-6">
+                    <div class="single_about_info">
+                        <h3>Over 7000 Tutorials <br>
+                            from 20 Courses</h3>
+                        <p>Our set he for firmament morning sixth subdue darkness creeping gathered divide our let god
+                            moving. Moving in fourth air night bring upon you’re it beast let you dominion likeness open
+                            place day great wherein heaven sixth lesser subdue fowl </p>
+                        <a href="#" class="boxed_btn">Enroll a Course</a>
                     </div>
                 </div>
-            </form>
-            <button id="answer" onclick="show()" type="button" class="genric-btn danger-border mb-2">Xem lời
-                giải</button>
+                <div class="col-xl-6 offset-xl-1 col-lg-6">
+                    <div class="about_tutorials">
+                        <div class="courses">
+                            <div class="inner_courses">
+                                <div class="text_info">
+                                    <span>20+</span>
+                                    <p> Courses</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="courses-blue">
+                            <div class="inner_courses">
+                                <div class="text_info">
+                                    <span>7638</span>
+                                    <p> Courses</p>
+                                </div>
 
-           <div class="col-12">
-            <div id="test" style="display:none">
+                            </div>
+                        </div>
+                        <div class="courses-sky">
+                            <div class="inner_courses">
+                                <div class="text_info">
+                                    <span>230+</span>
+                                    <p> Courses</p>
+                                </div>
 
-                <span class="text-danger ml-2 font-weight-bold"> Essay Plan:</span>
-                <ul class="list-group list-group-flush">
-                    {% for key, values in topic.items %}
-                        {% if key == "essay_plan" %}
-                            {% for k, v in values.items %}
-                    <li class="list-group-item"><b>{{ k }}:</b> {{ v }}</li>
-                            {% endfor %}
-                        {% endif %}
-                    {% endfor %}
-                  </ul>
-                  <span class="text-danger ml-2 font-weight-bold"> Essay:</span>
-                  <p>{{ topic.essay }} </p>
-                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-           </div>
         </div>
     </div>
+    <!-- about_area_end -->
 
-    <footer class="footer footer_bg_1">
+    <!-- our_team_member_start -->
+    <div class="our_team_member">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="{% static "img/team/1.png" %}" alt="">
+                            <div class="social_link">
+                                <a href="#"><i class="fa fa-envelope"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="master_name text-center">
+                            <h3>Macau Wilium</h3>
+                            <p>Massage Master</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="{% static "img/team/2.png" %}" alt="">
+                            <div class="social_link">
+                                <a href="#"><i class="fa fa-envelope"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="master_name text-center">
+                            <h3>Dan Jacky</h3>
+                            <p>Mens Cut</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="{% static "img/team/3.png" %}" alt="">
+                            <div class="social_link">
+                                <a href="#"><i class="fa fa-envelope"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="master_name text-center">
+                            <h3>Luka Luka</h3>
+                            <p>Mens Cut</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="{% static "img/team/4.png" %}" alt="">
+                            <div class="social_link">
+                                <a href="#"><i class="fa fa-envelope"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="master_name text-center">
+                            <h3>Rona Dana</h3>
+                            <p>Ladies Cut</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- our_team_member_end -->
+
+    <!-- footer -->
+    footer class="footer footer_bg_1">
         <div class="footer_top">
             <div class="container">
                 <div class="row">
@@ -326,8 +398,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{% static "js/jquery.validate.min.js" %}"></script>
     <script src="{% static "js/mail-script.js" %}"></script>
     <script src="{% static "js/writing.js" %}"></script>
-    
+
     <script src="{% static "js/main.js" %}"></script>
+    <script src="{% static "sweetalert2.all.min.js" %}"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="{% static "jQuery-plugin-progressbar.js" %}"></script>
 </body>
 
 </html>

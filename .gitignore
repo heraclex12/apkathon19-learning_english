@@ -7,3 +7,4 @@ bin/
 .git/
 logs/
 .DS_STore
+__pycache__/
