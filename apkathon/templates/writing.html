@@ -125,22 +125,24 @@
                 </div>
             </form>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="change-pass" onclick="abcf()">
-                <label class="form-check-label" for="exampleCheck1"><b class="text-dark">XEM LỜI GIẢI</b></label>
+                <input type="checkbox" class="form-check-input" id="change-pass" onclick="tickToView()" >
+                <label class="form-check-label" for="exampleCheck1" ><b id="exampleCheck1" class="text-dark">XEM LỜI GIẢI</b></label>
             </div>
            <div class="col-12">
             <div id="test" style="display:none">
 
-                <span class="text-danger ml-2 font-weight-bold"> Report Plan:</span>
+                <span class="text-danger ml-2 font-weight-bold"> Essay Plan:</span>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><b>Paraphrase paragraph:</b> graphs>bar charts; show>illustrate; percentage>proportion; participated>took part in</li>
-                    <li class="list-group-item"><b>Overview/summary paragraph:</b> (1) a higher % of boys participated in sport (2) dancing was more popular among girls</li>
-                    <li class="list-group-item"><b>Paragraph 3:</b> cultural activities – compare figures for drama and singing; contrast % for dancing and playing musical instruments</li>
-                    <li class="list-group-item"><b>Paragraph 4:</b> sport – contrast figures for boys and girls</li>
-                   
+                    {% for key, values in topic.items %}
+                        {% if key == "essay_plan" %}
+                            {% for k, v in values.items %}
+                    <li class="list-group-item"><b>{{ k }}:</b> {{ v }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
                   </ul>
-                  <span class="text-danger ml-2 font-weight-bold"> Report:</span>
-                  <p>&nbsp  &nbsp  &nbspThe bar charts illustrate the proportion of Australian boys and girls between the ages of 5 and 14 who took part in drama, dancing, singing, playing musical instruments and sport in 2003. <br> &nbsp  &nbsp  &nbsp In terms of organised cultural activities, the figures for boys and girls who took part in drama and singing were almost the same, at approximately 5% for each of these activities.   However, while almost one-quarter of girls participated in dancing, the figure for boys was only 3%.  By contrast, 15% of boys played musical instruments compared with 10% of <br>&nbsp  &nbsp  &nbspThere was a significant difference in the proportion of boys and girls who participated in sport.  Although just over half of all girls played sport, the figure for boys was considerably higher at 70%.</p>
+                  <span class="text-danger ml-2 font-weight-bold"> Essay:</span>
+                  <p>{{ topic.essay }} </p>
                   
             </div>
            </div>

@@ -1,4 +1,4 @@
-function abcf()
+function tickToView()
 {
     var checkbox=document.getElementById("change-pass");
     var disp=document.getElementById("test");
