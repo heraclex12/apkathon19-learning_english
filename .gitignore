@@ -1,0 +1,8 @@
+djangotut/
+.idea/
+target/
+data/
+tmp/
+bin/
+logs/
+.DS_STore
