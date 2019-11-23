@@ -7,8 +7,7 @@
     <title>English for Future</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-     {% load static %}
+    {% load static %}
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static  "img/favicon.png" %}">
     <!-- Place favicon.ico in the root directory -->
@@ -25,7 +24,6 @@
     <link rel="stylesheet" href="{% static "css/animate.css" %}">
     <link rel="stylesheet" href="{% static "css/slicknav.css" %}">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <link rel="stylesheet" href="{% static "css/circle.css" %}">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
@@ -36,44 +34,44 @@
 
     <!-- header-start -->
     <header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container-fluid p-0">
-                    <div class="row align-items-center no-gutters">
-                        <div class="col-xl-2 col-lg-2">
-                            <div class="logo-img">
-                                <a href="/">
-                                    <img src="{% static "img/logo.png" %}" alt="">
-                                </a>
+            <div class="header-area ">
+                <div id="sticky-header" class="main-header-area">
+                    <div class="container-fluid p-0">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo-img">
+                                    <a href="/">
+                                        <img src="{% static "img/logo.png" %}" alt="">
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-7">
-                            <div class="main-menu  d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a href="/">home</a></li>
-                                        <li><a class="active" href="#">skills <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="/listening">Listening</a></li>
-                                                <li><a href="/writing">Writing</a></li>
-                                                <li><a href="/reading/1">Reading</a></li>
-                                                <li><a href="/speaking">Speaking</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Mock test <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="course_details.html">Beginner</a></li>
-                                                <li><a href="elements.html">Intermediate</a></li>
-                                                <li><a href="course_details.html">Advance</a></li>
-                                                <li><a href="elements.html">Test your level</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="/about">About</a></li>
-                                    </ul>
-                                </nav>
+                            <div class="col-xl-7 col-lg-7">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="/">home</a></li>
+                                            <li><a href="#">skills <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="/listening">Listening</a></li>
+                                                    <li><a href="/writing">Writing</a></li>
+                                                    <li><a href="/reading/1">Reading</a></li>
+                                                    <li><a class="active" href="/speaking">Speaking</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Mock test <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="course_details.html">Beginner</a></li>
+                                                    <li><a href="elements.html">Intermediate</a></li>
+                                                    <li><a href="course_details.html">Advance</a></li>
+                                                    <li><a href="elements.html">Test your level</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="/about">About</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
                             </div>
-                        </div>
-                         <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                             <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="log_chat_area d-flex align-items-center">
                                 <div class="live_chat_btn" >
                                     <a class="boxed_btn_orange" onclick="Login()">
@@ -83,121 +81,48 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     <!-- header-end -->
 
     <!-- bradcam_area_start -->
     <div class="bradcam_area breadcam_bg overlay2">
-        <h3>Writing</h3>
+        <h3>Speaking</h3>
     </div>
     <!-- bradcam_area_end -->
 
-    <!-- about_area_start -->
-
-
-    <div class="container">
-        <div class="row d-flex justify-content-center mt-2">
-           <h3> Kết quả bài viết</h3>
-        </div>
-           <div class="row d-flex justify-content-center mt-2">
-            
-                        <div class="d-flex flex-column text-center">
-                                <div class="c100 p{{ point.grammar }} orange mt-5 ">
-                                        <span style="font-family: 'Titillium Web', sans-serif;color:#3c4761">{{ point.grammar }}%</span>
-                                        <div class="slice">
-                                            <div class="bar"></div>
-                                            <div class="fill"></div>
-                                        </div>
-                                    </div>
-                                    <span class="font-weight-bold">Grammar</span>
-                        </div>
-               
-              
-                        <div class="d-flex flex-column text-center">
-                                <div class="c100 p{{ point.total }} big ml-2 ">
-                                        <span style="font-family: 'Titillium Web', sans-serif;color:#3c4761">{{ point.total }}%</span>
-                                        <div class="slice">
-                                            <div class="bar"></div>
-                                            <div class="fill"></div>
-                                        </div>
-                                    </div>
-                                    <span class="font-weight-bold">Total</span>
-                            </div>
-                       
-                            <div class="d-flex flex-column text-center">
-                                    <div class="c100 p{{ point.spelling }} green mt-5">
-                                            <span style="font-family: 'Titillium Web', sans-serif;color:#3c4761">{{ point.spelling }}%</span>
-                                            <div class="slice">
-                                                <div class="bar"></div>
-                                                <div class="fill"></div>
-                                            </div>
-                                        </div>
-                                        <span class="font-weight-bold">Spelling</span>
-                            </div>
-           </div>
-        <div class="row mt-4">
-
-            <div class="container">
-                <div class="row">
-                    <h4>Những lỗi sai</h4>
-                </div>
-                <div class="row">
-                    <div class="col-12 pb-5 border-bottom border-warning">
-                    <p style="font-size:30px;text-align:center;color:black">{% autoescape on %} {{ fixed|safe }} {% endautoescape %}</p>
-                    </div>
-                </div>
-                <div class="row pt-5"></div>
-            </div>
-            <script>
-                var bool = 1;
-                function show() {
-                    var disp = document.getElementById("test");
-                    var disp2 = document.getElementById("answer");
-                    if (bool == 1) {
-                        disp.style.display = "block";
-                        bool = 0;
-                        disp2.innerHTML = 'Ẩn lời giải';
-                    }
-                    else {
-                        disp.style.display = "none";
-                        disp2.innerHTML = 'Xem lời giải';
-                        bool = 1;
-                    }
-                }
-            </script>
-            <button style="width: 100%;" id="answer" onclick="show()" type="button"
-                class="genric-btn danger-border mb-2">Xem lỗi sai</button>
-            
-            <div class="col-12">
-            <div id="test" style="display:none">
-                <ul class="list-group list-group-flush">
-                    {% for error in errors %}
-                        <li class="list-group-item"><b>Lỗi: </b> {{ error.msg }}</li>
-                        {% if error.dst != "" %}
-                            <li class="list-group-item"><b>Miêu tả: </b> {{ error.dst }}</li>
-                        {% endif %}
-                        {% for k, v in error.items %}
-                            {% if k == "rep" %}
-                                {% for key, value in v.items %}
-                                <li class="list-group-item"><b>Thay thế: </b> {{ value }}</li>
+    <!--Content start-->
+    <h2 class='text-center mt-5'> Read the script below </h2>
+    <div class="popular_courses plus_padding">
+        
+        <div class="card-body">
+                            <div class="justify-content-center">
+                            {% if topic.type == "QA" %}
+                                {% for sens in topic.timeline %}
+                                    <h4 class='text-center'>{{ sens }}</h4>
                                 {% endfor %}
+                            {% else %}
+                                <h3 class='text-center'>
+                                   {% autoescape on %} {{ topic.text|safe }} {% endautoescape %}
+                                </h3>
                             {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                  </ul>
+                            </div>
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <div class="d-flex justify-content-center">
+                                <button type="submit" class="genric-btn primary-border circle text-center mt-5">Start recording</button>
+                                </div>
+                            </form>
             </div>
-           </div>
-            
-        </div>
     </div>
-
+    <!--Content end-->
+    <!-- footer -->
     <footer class="footer footer_bg_1">
         <div class="footer_top">
             <div class="container">
@@ -285,6 +210,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- footer -->
 
 
+
     <!-- form itself end-->
     <form id="test-form" class="white-popup-block mfp-hide">
         <div class="popup_box ">
@@ -350,6 +276,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- JS here -->
     <script src="{% static "js/vendor/modernizr-3.5.0.min.js" %}"></script>
     <script src="{% static "js/vendor/jquery-1.12.4.min.js" %}"></script>
+    <script src="{% static "js/vendor/jquery.js" %}"></script>
+    <script src="{% static "js/lity.js" %}"></script>
     <script src="{% static "js/popper.min.js" %}"></script>
     <script src="{% static "js/bootstrap.min.js" %}"></script>
     <script src="{% static "js/owl.carousel.min.js" %}"></script>
@@ -376,12 +304,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{% static "js/writing.js" %}"></script>
 
     <script src="{% static "js/main.js" %}"></script>
-    <script src="{% static "sweetalert2.all.min.js" %}"></script>
+    <script src="{% static "js/sweetalert2.all.min.js" %}"></script>
     <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-    <script src="{% static "jQuery-plugin-progressbar.js" %}"></script>
+    <script src="{% static "js/jQuery-plugin-progressbar.js" %}"></script>
 
-
+ 
 </body>
 
 </html>

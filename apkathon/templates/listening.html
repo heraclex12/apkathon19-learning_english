@@ -1,0 +1,333 @@
+<!doctype html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>English for Future</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "img/favicon.png" %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/themify-icons.css" %}">
+    <link rel="stylesheet" href="{% static "css/nice-select.css" %}">
+    <link rel="stylesheet" href="{% static "css/flaticon.css" %}">
+    <link rel="stylesheet" href="{% static "css/gijgo.css" %}">
+    <link rel="stylesheet" href="{% static "css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "css/slicknav.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/listening.css" %}">
+    <link rel="stylesheet" href="{% static "css/slick.css" %}">
+    <link rel="stylesheet" href="{% static "css/slick-theme.css" %}">
+    <link rel="stylesheet" href="{% static "css/youtube.css" %}">
+
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+            <div class="header-area ">
+                <div id="sticky-header" class="main-header-area">
+                    <div class="container-fluid p-0">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo-img">
+                                    <a href="index.html">
+                                        <img src="img/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-7">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="/">home</a></li>
+                                            <li><a href="#">skills <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a class="active" href="/listening">Listening</a></li>
+                                                    <li><a href="/writing">Writing</a></li>
+                                                    <li><a href="/reading/1">Reading</a></li>
+                                                    <li><a href="/speaking">Speaking</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Mock test <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="course_details.html">Beginner</a></li>
+                                                    <li><a href="elements.html">Intermediate</a></li>
+                                                    <li><a href="course_details.html">Advance</a></li>
+                                                    <li><a href="elements.html">Test your level</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="/about">About</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                                <div class="log_chat_area d-flex align-items-center">
+                                    <div class="live_chat_btn" >
+                                        <a class="boxed_btn_orange" onclick="Login()">
+                                            <i class="flaticon-user"></i>
+                                            <span>LOGIN WITH FACEBOOK</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <!-- header-end -->
+    <!-- bradcam_area_start -->
+    <div class="bradcam_area breadcam_bg">
+        <h3>Listening</h3>
+
+        <div id='area-to-scroll'></div>
+    </div>
+    <!-- bradcam_area_end -->
+    <!--Test API-->
+
+    <div class="listening-area container p-3">
+        <div class="row">
+            <div class="col-6">
+                <section id="video-learning">
+                </section>
+            </div>
+            <div class="col-6">
+                <section id="video-transcipt">
+                </section>
+            </div>
+
+        </div>
+        <div id='close-video-learning' class="row pt-3" style="display: none">
+            <div class="col-xl-12">
+                <div class="text-center">
+                    <a href="#area-to-show-popular-courses" class="boxed_btn_rev">Done</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!---->
+
+    <!-- popular_courses_start -->
+    <div id='area-to-show-popular-courses' class="popular_courses">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="nav nav-pills nav-fill justify-content-center">
+                        <nav>
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Newest</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" onclick="loadVidsbyTopic(chanIds, options, 'sport')">Sport</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" onclick="loadVidsbyTopic(chanIds, options, 'education')">Education</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="design-tab" data-toggle="tab" href="#design" role="tab" aria-controls="design" aria-selected="false" onclick="loadVidsbyTopic(chanIds, options, 'economics')">Economics</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="Web-tab" data-toggle="tab" href="#Web" role="tab" aria-controls="design" aria-selected="false" onclick="loadVidsbyTopic(chanIds, options, 'entertainment')">Entertainment</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="Web-tab1" data-toggle="tab" href="#Web1" role="tab" aria-controls="design" aria-selected="false" onclick="loadVidsbyTopic(chanIds, options, 'biology')">Biology</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="Web-tab11" data-toggle="tab" href="#Web11" role="tab" aria-controls="design" aria-selected="false" onclick="loadVidsbyTopic(chanIds, options, 'business')">Business</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="Adobe-XD-tab8" data-toggle="tab" href="#Adobe-XD8" role="tab" aria-controls="design" aria-selected="false" onclick="loadVidsbyTopic(chanIds, options, 'art')">Art</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="Adobe-XD-tab9" data-toggle="tab" href="#Adobe-XD9" role="tab" aria-controls="design" aria-selected="false" onclick="loadVidsbyTopic(chanIds, options, 'body language')">Body language</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="all_courses">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title text-center m-5">
+                            <h4>Ted-talk</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="myContent">
+                    <div class="tab-pane fade show active" id="TED" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row showVideos-1">
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title text-center m-5">
+                            <h4>BBC</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="myContent">
+                    <div class="tab-pane fade show active" id="TED" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row showVideos-2">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title text-center m-5">
+                            <h4>CNN</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="myContent">
+                    <div class="tab-pane fade show active" id="TED" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row showVideos-3">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title text-center m-5">
+                            <h4>TheEllenShow</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="myContent">
+                    <div class="tab-pane fade show active" id="TED" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row showVideos-4">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title text-center m-5">
+                            <h4>Motivation2Study</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="myContent">
+                    <div class="tab-pane fade show active" id="TED" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row showVideos-5">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title text-center m-5">
+                            <h4>VOA Learning English</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="myContent">
+                    <div class="tab-pane fade show active" id="TED" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row showVideos-6">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title text-center m-5">
+                            <h4>Learn English With TV Series</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="myContent">
+                    <div class="tab-pane fade show active" id="TED" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row showVideos-7">
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- popular_courses_end-->
+
+    <!-- JS here -->
+
+    <!--Api Search video on Youtube-->
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+    <!--Close of API-->
+
+
+    <script src="{% static "js/vendor/modernizr-3.5.0.min.js" %}"></script>
+    <script src="{% static "js/vendor/jquery-1.12.4.min.js" %}"></script>
+    <script src="{% static "js/popper.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/owl.carousel.min.js" %}"></script>
+    <script src="{% static "js/isotope.pkgd.min.js" %}"></script>
+    <script src="{% static "js/ajax-form.js" %}"></script>
+    <script src="{% static "js/waypoints.min.js" %}"></script>
+    <script src="{% static "js/jquery.counterup.min.js" %}"></script>
+    <script src="{% static "js/imagesloaded.pkgd.min.js" %}"></script>
+    <script src="{% static "js/scrollIt.js" %}"></script>
+    <script src="{% static "js/jquery.scrollUp.min.js" %}"></script>
+    <script src="{% static "js/wow.min.js" %}"></script>
+    <script src="{% static "js/nice-select.min.js" %}"></script>
+    <script src="{% static "js/jquery.slicknav.min.js" %}"></script>
+    <script src="{% static "js/jquery.magnific-popup.min.js" %}"></script>
+    <script src="{% static "js/plugins.js" %}"></script>
+    <script src="{% static "js/gijgo.min.js" %}"></script>
+
+    <!--contact js-->
+    <script src="{% static "js/contact.js" %}"></script>
+    <script src="{% static "js/jquery.ajaxchimp.min.js" %}"></script>
+    <script src="{% static "js/jquery.form.js" %}"></script>
+    <script src="{% static "js/jquery.validate.min.js" %}"></script>
+    <script src="{% static "js/mail-script.js" %}"></script>
+
+    <script src="{% static "js/main.js" %}"></script>
+
+    <script src="{% static "js/slick.min.js" %}"></script>
+    <script src="{% static "js/listening.js" %}"></script>
+    <script src="{% static "js/youtube.js" %}"></script>
+</body>
+
+</html>

@@ -7,8 +7,7 @@
     <title>English for Future</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-     {% load static %}
+    {% load static %}
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static  "img/favicon.png" %}">
     <!-- Place favicon.ico in the root directory -->
@@ -25,8 +24,43 @@
     <link rel="stylesheet" href="{% static "css/animate.css" %}">
     <link rel="stylesheet" href="{% static "css/slicknav.css" %}">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <link rel="stylesheet" href="{% static "css/circle.css" %}">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <style>
+        .square_btn35{
+            display: inline-block;
+            position: relative;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            color: #000;
+            transition: .4s;
+        }
+        .square_btn35:hover {
+            color:#fff !important;
+            background-color:#ff7f7f;
+        
+        }
+        .square_btn35:before,.square_btn35:after{
+        position: absolute;
+        top: 0;
+        content:'';
+        width: 8px;
+        height: 100%;
+        display: inline-block;
+        }
+        .square_btn35:before{
+        border-left: solid 1px #ff7f7f;
+        border-top: solid 1px #ff7f7f;
+        border-bottom: solid 1px #ff7f7f;
+        left: 0;
+        }
+        .square_btn35:after{
+        content: '';
+        border-top: solid 1px #ff7f7f;
+        border-right: solid 1px #ff7f7f;
+        border-bottom: solid 1px #ff7f7f;
+        right: 0;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="{% static css/responsive.css"> -->
 </head>
 
 <body>
@@ -101,188 +135,35 @@
 
     <!-- about_area_start -->
 
-
-    <div class="container">
-        <div class="row d-flex justify-content-center mt-2">
-           <h3> Kết quả bài viết</h3>
-        </div>
-           <div class="row d-flex justify-content-center mt-2">
-            
-                        <div class="d-flex flex-column text-center">
-                                <div class="c100 p{{ point.grammar }} orange mt-5 ">
-                                        <span style="font-family: 'Titillium Web', sans-serif;color:#3c4761">{{ point.grammar }}%</span>
-                                        <div class="slice">
-                                            <div class="bar"></div>
-                                            <div class="fill"></div>
-                                        </div>
-                                    </div>
-                                    <span class="font-weight-bold">Grammar</span>
-                        </div>
-               
-              
-                        <div class="d-flex flex-column text-center">
-                                <div class="c100 p{{ point.total }} big ml-2 ">
-                                        <span style="font-family: 'Titillium Web', sans-serif;color:#3c4761">{{ point.total }}%</span>
-                                        <div class="slice">
-                                            <div class="bar"></div>
-                                            <div class="fill"></div>
-                                        </div>
-                                    </div>
-                                    <span class="font-weight-bold">Total</span>
-                            </div>
-                       
-                            <div class="d-flex flex-column text-center">
-                                    <div class="c100 p{{ point.spelling }} green mt-5">
-                                            <span style="font-family: 'Titillium Web', sans-serif;color:#3c4761">{{ point.spelling }}%</span>
-                                            <div class="slice">
-                                                <div class="bar"></div>
-                                                <div class="fill"></div>
-                                            </div>
-                                        </div>
-                                        <span class="font-weight-bold">Spelling</span>
-                            </div>
-           </div>
-        <div class="row mt-4">
-
-            <div class="container">
-                <div class="row">
-                    <h4>Những lỗi sai</h4>
-                </div>
-                <div class="row">
-                    <div class="col-12 pb-5 border-bottom border-warning">
-                    <p style="font-size:30px;text-align:center;color:black">{% autoescape on %} {{ fixed|safe }} {% endautoescape %}</p>
-                    </div>
-                </div>
-                <div class="row pt-5"></div>
-            </div>
-            <script>
-                var bool = 1;
-                function show() {
-                    var disp = document.getElementById("test");
-                    var disp2 = document.getElementById("answer");
-                    if (bool == 1) {
-                        disp.style.display = "block";
-                        bool = 0;
-                        disp2.innerHTML = 'Ẩn lời giải';
-                    }
-                    else {
-                        disp.style.display = "none";
-                        disp2.innerHTML = 'Xem lời giải';
-                        bool = 1;
-                    }
-                }
-            </script>
-            <button style="width: 100%;" id="answer" onclick="show()" type="button"
-                class="genric-btn danger-border mb-2">Xem lỗi sai</button>
-            
-            <div class="col-12">
-            <div id="test" style="display:none">
-                <ul class="list-group list-group-flush">
-                    {% for error in errors %}
-                        <li class="list-group-item"><b>Lỗi: </b> {{ error.msg }}</li>
-                        {% if error.dst != "" %}
-                            <li class="list-group-item"><b>Miêu tả: </b> {{ error.dst }}</li>
-                        {% endif %}
-                        {% for k, v in error.items %}
-                            {% if k == "rep" %}
-                                {% for key, value in v.items %}
-                                <li class="list-group-item"><b>Thay thế: </b> {{ value }}</li>
-                                {% endfor %}
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                  </ul>
-            </div>
-           </div>
-            
-        </div>
+    <div class="d-flex justify-content-center mt-2 mb-2">
+        <a class="m-4 square_btn35" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/1">1</a>
+        <a class="m-4 square_btn35" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/2">2</a>
+        <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/3">3</a>
+        <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/4">4</a>
+        <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/5">5</a>
     </div>
-
-    <footer class="footer footer_bg_1">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-md-6 col-lg-4">
-                        <div class="footer_widget">
-                            <div class="footer_logo">
-                                <a href="#">
-                                    <img src="{% static "img/logo.png" %}" alt="">
-                                </a>
-                            </div>
-                            <p>
-                               Demo version for Apkathon 2019 contest
-                            </p>
-                            <div class="socail_links">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-twitter-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-youtube-play"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Courses
-                            </h3>
-                            <ul>
-                                <li><a href="/listening">Listenning</a></li>
-                                <li><a href="/speaking">Speaking</a></li>
-                                <li><a href="/reading">Reading</a></li>
-                                <li><a href="/writing">Writing</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Address
-                            </h3>
-                            <p>
-                                University of Science <br>
-                                227, Nguyen Van Cu, District 5, Ho Chi Minh City <br>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="d-flex justify-content-center mt-2 mb-2">
+            <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/6">6</a>
+            <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/7">7</a>
+            <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/8">8</a>
+            <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/9">9</a>
+            <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/10">10</a>
         </div>
-        <div class="copy-right_text">
-            <div class="container">
-                <div class="footer_border"></div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <p class="copy_right text-center">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
-                </div>
+        <div class="d-flex justify-content-center mt-2 mb-2">
+                <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/11">11</a>
+                <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/12">12</a>
+                <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/13">13</a>
+                <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/14">14</a>
+                <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/15">15</a>
             </div>
-        </div>
-    </footer>
-    <!-- footer -->
+<div class="d-flex justify-content-center mt-2 mb-2">
+        <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/16">16</a>
+        <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/17">17</a>
+        <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/18">18</a>
+        <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/19">19</a>
+        <a class="square_btn35 m-4" style="width:100px;text-align:center;color:#ff7f7f;font-size:25px" href="/writing/20">20</a>
+    </div>
+    <div class="row pt-5"></div>
 
 
     <!-- form itself end-->
@@ -347,7 +228,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- form itself end -->
 
 
-    <!-- JS here -->
+   <!-- JS here -->
     <script src="{% static "js/vendor/modernizr-3.5.0.min.js" %}"></script>
     <script src="{% static "js/vendor/jquery-1.12.4.min.js" %}"></script>
     <script src="{% static "js/popper.min.js" %}"></script>
@@ -374,14 +255,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{% static "js/jquery.validate.min.js" %}"></script>
     <script src="{% static "js/mail-script.js" %}"></script>
     <script src="{% static "js/writing.js" %}"></script>
-
+    
     <script src="{% static "js/main.js" %}"></script>
-    <script src="{% static "sweetalert2.all.min.js" %}"></script>
-    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-    <script src="{% static "jQuery-plugin-progressbar.js" %}"></script>
-
-
 </body>
 
 </html>

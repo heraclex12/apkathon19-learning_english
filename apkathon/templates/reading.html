@@ -7,10 +7,9 @@
     <title>English for Future</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-     {% load static %}
+    {% load static %}
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static  "img/favicon.png" %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "img/favicon.png" %}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -25,7 +24,7 @@
     <link rel="stylesheet" href="{% static "css/animate.css" %}">
     <link rel="stylesheet" href="{% static "css/slicknav.css" %}">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <link rel="stylesheet" href="{% static "css/circle.css" %}">
+    <link rel="stylesheet" href="{% static "css/tooltip.css" %}">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
@@ -51,25 +50,25 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="/">home</a></li>
-                                        <li><a class="active" href="#">skills <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="/listening">Listening</a></li>
-                                                <li><a href="/writing">Writing</a></li>
-                                                <li><a href="/reading/1">Reading</a></li>
-                                                <li><a href="/speaking">Speaking</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Mock test <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="course_details.html">Beginner</a></li>
-                                                <li><a href="elements.html">Intermediate</a></li>
-                                                <li><a href="course_details.html">Advance</a></li>
-                                                <li><a href="elements.html">Test your level</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="/about">About</a></li>
-                                    </ul>
+                                            <li><a href="/">home</a></li>
+                                            <li><a href="#">skills <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="/listening">Listening</a></li>
+                                                    <li><a href="/writing">Writing</a></li>
+                                                    <li><a class="active" href="/reading/1">Reading</a></li>
+                                                    <li><a href="/speaking">Speaking</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Mock test <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="course_details.html">Beginner</a></li>
+                                                    <li><a href="elements.html">Intermediate</a></li>
+                                                    <li><a href="course_details.html">Advance</a></li>
+                                                    <li><a href="elements.html">Test your level</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="/about">About</a></li>
+                                        </ul>
                                 </nav>
                             </div>
                         </div>
@@ -95,109 +94,102 @@
 
     <!-- bradcam_area_start -->
     <div class="bradcam_area breadcam_bg overlay2">
-        <h3>Writing</h3>
+        <h3>Reading</h3>
     </div>
     <!-- bradcam_area_end -->
 
     <!-- about_area_start -->
 
 
-    <div class="container">
-        <div class="row d-flex justify-content-center mt-2">
-           <h3> Kết quả bài viết</h3>
-        </div>
-           <div class="row d-flex justify-content-center mt-2">
-            
-                        <div class="d-flex flex-column text-center">
-                                <div class="c100 p{{ point.grammar }} orange mt-5 ">
-                                        <span style="font-family: 'Titillium Web', sans-serif;color:#3c4761">{{ point.grammar }}%</span>
-                                        <div class="slice">
-                                            <div class="bar"></div>
-                                            <div class="fill"></div>
-                                        </div>
-                                    </div>
-                                    <span class="font-weight-bold">Grammar</span>
-                        </div>
-               
-              
-                        <div class="d-flex flex-column text-center">
-                                <div class="c100 p{{ point.total }} big ml-2 ">
-                                        <span style="font-family: 'Titillium Web', sans-serif;color:#3c4761">{{ point.total }}%</span>
-                                        <div class="slice">
-                                            <div class="bar"></div>
-                                            <div class="fill"></div>
-                                        </div>
-                                    </div>
-                                    <span class="font-weight-bold">Total</span>
-                            </div>
-                       
-                            <div class="d-flex flex-column text-center">
-                                    <div class="c100 p{{ point.spelling }} green mt-5">
-                                            <span style="font-family: 'Titillium Web', sans-serif;color:#3c4761">{{ point.spelling }}%</span>
-                                            <div class="slice">
-                                                <div class="bar"></div>
-                                                <div class="fill"></div>
-                                            </div>
-                                        </div>
-                                        <span class="font-weight-bold">Spelling</span>
-                            </div>
-           </div>
-        <div class="row mt-4">
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-2 border ">
+                <div class="row">
+                    <span class="m-3 text-uppercase">Danh sách bài đọc</span>
+                </div>
 
-            <div class="container">
-                <div class="row">
-                    <h4>Những lỗi sai</h4>
-                </div>
-                <div class="row">
-                    <div class="col-12 pb-5 border-bottom border-warning">
-                    <p style="font-size:30px;text-align:center;color:black">{% autoescape on %} {{ fixed|safe }} {% endautoescape %}</p>
+                <ul class="list-group list-group-flush mt-3">
+                    <li class="list-group-item "><a class="text-danger " href="/reading/1">Bài đọc 1</a></li>
+                    <li class="list-group-item"><a class="text-dark" href="/reading/2">Bài đọc 2</a></li>
+                    <li class="list-group-item"><a class="text-dark" href="/reading/3">Bài đọc 3</a></li>
+
+                </ul>
+            </div>
+            <div class="col-10">
+                <div class="row mt-4">
+
+                    <div class="col-12">
+                        <h2 class="">Topic</h2>
                     </div>
+
+
+                   <div class="col-12 border-bottom d-flex justify-content-center">
+                        <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="form-group  mt-2 text-center">
+                            {{ form }}
+                            <button type="submit" class="btn btn-danger btn-sm mb-2 mt-2 rouned "> <i class="fa fa-gavel mr-2"
+                                    aria-hidden="true"> </i>Pickup!</button>
+                        </div>
+                        </form> 
+                
+            </form>
+                    </div>
+                    <div class="col-6 border-right">
+
+                        <h3 class="mt-3">{{ topic.en_title }}</h3>
+                    
+                        {% autoescape on %} {{ topic.en|safe }} {% endautoescape %}
+                    </div>
+                   
+                    <div class="col-6" >
+                            <h3 class="mt-3">{{ topic.vi_title }}</h3>
+                            <div id="test" style="filter:blur(0.3rem)">
+                               
+                                {% autoescape on %} {{ topic.vi|safe }} {% endautoescape %}
+                                <script>
+                                    var t = '';
+                                    function gText(e) {
+                                        t = (document.all) ? document.selection.createRange().text : document.getSelection();
+        
+                                        document.getElementById('input').value = t;
+                                    }
+        
+                                    document.onmouseup = gText;
+                                    if (!document.all) document.captureEvents(Event.MOUSEUP);
+                                   
+                                </script>
+                                
+                            </div>
+                            
+                        </div>
+                      
+                                <div class="col-12 mt-3">
+                                        <button id="answer" onclick="trans()" type="button" class="btn btn-outline-primary mb-2">Xem bài
+                                                dịch</button>
+                                                
+                                </div>
+                        </div>
+                        <script>
+                             function trans()
+                                    {
+                                        var disp = document.getElementById("test");
+                                        disp.style.filter = "blur(0)";
+                                    }
+                        </script>
                 </div>
-                <div class="row pt-5"></div>
             </div>
-            <script>
-                var bool = 1;
-                function show() {
-                    var disp = document.getElementById("test");
-                    var disp2 = document.getElementById("answer");
-                    if (bool == 1) {
-                        disp.style.display = "block";
-                        bool = 0;
-                        disp2.innerHTML = 'Ẩn lời giải';
-                    }
-                    else {
-                        disp.style.display = "none";
-                        disp2.innerHTML = 'Xem lời giải';
-                        bool = 1;
-                    }
-                }
-            </script>
-            <button style="width: 100%;" id="answer" onclick="show()" type="button"
-                class="genric-btn danger-border mb-2">Xem lỗi sai</button>
-            
-            <div class="col-12">
-            <div id="test" style="display:none">
-                <ul class="list-group list-group-flush">
-                    {% for error in errors %}
-                        <li class="list-group-item"><b>Lỗi: </b> {{ error.msg }}</li>
-                        {% if error.dst != "" %}
-                            <li class="list-group-item"><b>Miêu tả: </b> {{ error.dst }}</li>
-                        {% endif %}
-                        {% for k, v in error.items %}
-                            {% if k == "rep" %}
-                                {% for key, value in v.items %}
-                                <li class="list-group-item"><b>Thay thế: </b> {{ value }}</li>
-                                {% endfor %}
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                  </ul>
-            </div>
-           </div>
-            
         </div>
+
+    </div>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+    </script>
     </div>
 
+   <!-- footer -->
     <footer class="footer footer_bg_1">
         <div class="footer_top">
             <div class="container">
